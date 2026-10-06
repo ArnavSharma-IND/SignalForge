@@ -1,0 +1,7 @@
+@import "tailwindcss";
+body{background:#0a0f1f;color:#e8ecf5;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.flow{stroke-dasharray:4 6;animation:dash 1s linear infinite}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+.fade{animation:fade .45s ease both}
+@media (prefers-reduced-motion:reduce){.flow,.fade{animation:none}}
