@@ -1,2 +1,7 @@
 fastapi
-uvicorn
+uvicorn[standard]
+httpx
+motor
+firebase-admin
+pydantic>=2
+pytest
