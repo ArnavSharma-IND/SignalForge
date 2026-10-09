@@ -15,15 +15,29 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.142-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 
+**Repository**: [https://github.com/ArnavSharma-IND/SignalForge](https://github.com/ArnavSharma-IND/SignalForge)
+
 </div>
 
 ---
 
-## 📖 Overview
+## 🏆 Built For
+**Finding the Next Signal Challenge**  
+**BITS Pilani — Hyderabad Campus**
 
-In modern financial and equity research, **information is abundant, but clarity is scarce**. Analysts drown in hundreds of pages of 10-K filings, earnings call transcripts, industry trackers, customer panel data, and peer reports. Most AI tools summarize individual documents in isolation, amplifying confirmation bias without challenging company claims.
+---
 
-**SignalForge** reimagines equity research as an adversarial, hypothesis-driven intelligence pipeline. Rather than simply summarizing text, SignalForge actively searches for discrepancies between management commentary and empirical external data, attempts to falsify its own leading theses, and computes a transparent, weighted signal score.
+## 📖 Executive Overview
+
+In equity and financial intelligence, **information is abundant, but clarity is scarce**. Analysts drown in hundreds of pages of 10-K/annual filings, earnings call transcripts, industry trackers, customer panel data, and peer reports. Most AI tools summarize individual documents in isolation, amplifying confirmation bias without challenging management claims.
+
+**SignalForge** reimagines equity research as an adversarial, hypothesis-driven intelligence pipeline:
+
+```text
+SEARCH ➔ UNDERSTAND ➔ COMPARE ➔ CHALLENGE ➔ FALSIFY ➔ DISCOVER
+```
+
+Rather than simply summarizing text, SignalForge actively surfaces discrepancies between management commentary and empirical external data, attempts to falsify its own leading theses, and computes a transparent, weighted signal score.
 
 ---
 
@@ -41,13 +55,13 @@ flowchart LR
     F --> G["7. Synthesize Signal & Score"]
 ```
 
-1. **Decompose the Question**: Dissects broad inquiries into focused vectors across growth, margins, competitive dynamics, and structural risk.
+1. **Decompose the Question**: Dissects broad inquiries into focused vectors across growth sustainability, margins, competitive dynamics, demand patterns, and structural risk.
 2. **Form Hypotheses**: Drafts competing explanatory theses *before* digesting evidence to mitigate confirmation bias.
-3. **Gather Evidence**: Extracts atomic claims across company filings, third-party benchmarks, peer disclosures, and alternative data.
+3. **Gather Evidence**: Extracts atomic claims across company filings, third-party benchmarks, peer disclosures, and alternative data with source attribution.
 4. **Triangulate Sources**: Measures convergence and divergence across independent sources evaluating the same claim.
-5. **Detect Contradictions**: Surfaces discrepancies where management claims directly clash with empirical market data.
+5. **Detect Contradictions**: Surfaces discrepancies where management commentary directly clashes with empirical market data.
 6. **Attempt to Falsify**: Stress-tests the leading thesis by actively querying for falsifiers and disconfirming evidence.
-7. **Evaluate the Signal**: Computes a multi-dimensional weighted score across strength, source quality, consensus, novelty, and contradiction risk.
+7. **Evaluate the Signal**: Computes a multi-dimensional weighted score across strength, source quality, cross-source agreement, novelty, and contradiction risk.
 
 ---
 
@@ -59,7 +73,7 @@ $$\text{Signal Score} = 0.30 \cdot E + 0.20 \cdot Q + 0.15 \cdot A + 0.25 \cdot 
 
 | Dimension | Weight | Description |
 | :--- | :---: | :--- |
-| **Evidence Strength ($E$)** | `30%` | Depth, granularity, and statistical backing of collected observations. |
+| **Evidence Strength ($E$)** | `30%` | Depth, granularity, and empirical backing of collected observations. |
 | **Source Quality ($Q$)** | `20%` | Reliability hierarchy (Audited Filings > Regulatory Data > Industry Reports > Sell-Side). |
 | **Cross-Source Agreement ($A$)** | `15%` | Degree of corroboration between independent third-party sources. |
 | **Novelty ($N$)** | `25%` | Information edge not yet broadly priced into sell-side consensus. |
@@ -67,17 +81,71 @@ $$\text{Signal Score} = 0.30 \cdot E + 0.20 \cdot Q + 0.15 \cdot A + 0.25 \cdot 
 
 ---
 
+## 💡 Demo Investigation: Reliance Industries
+
+The project includes an illustrative research demonstration analyzing **Reliance Industries**:
+
+### Core Question
+> *"Is the current growth trajectory sustainable?"*
+
+### Hypotheses Explored
+- **H1**: Growth is volume-led and healthy *(Status: Rejected, 31% conf)*
+- **H2**: Growth is price/mix-led and masks weaker unit economics *(Status: Supported, 82% conf)*
+- **H3**: Segment mix shift dilutes consolidated margins *(Status: Revised, 68% conf)*
+- **H4**: Input-cost inflation is the main margin threat *(Status: Supported, 71% conf)*
+- **H5**: Competitor pricing erodes share gains *(Status: Open, 55% conf)*
+
+### Synthesized Signal
+> **"Revenue growth may be masking deteriorating unit economics."**  
+> *(Signal Strength: Strong | Novelty: High | Confidence: 82% | Score: 7.9/10)*
+
+---
+
+## 🎯 Hackathon Alignment Matrix
+
+| Challenge Requirement | SignalForge Module / Implementation |
+| :--- | :--- |
+| **Non-obvious financial insight** | Discovered Signal & Multi-dimensional Scoring |
+| **Evidence-backed research** | Granular Evidence Matrix with source attribution |
+| **Structured research workflow** | 7-Step Institutional Research Pipeline |
+| **Evidence triangulation** | Cross-source corroboration and divergence engine |
+| **Contradiction detection** | Side-by-side Company Claim vs. Empirical Reality explorer |
+| **Self-falsification** | Adversarial stress testing with explicit risk ratings |
+| **Counterargument inclusion** | Alternative explanations & risk monitoring register |
+| **Evidence trail visualization** | Interactive SVG bezier Topological Research Graph |
+| **Working application** | High-performance React 18 + Vite + FastAPI workspace |
+
+---
+
 ## ✨ Features & Interface Modules
 
 - 🌌 **Cinematic 3D Interactive Hero**: Interactive isometric document stack reacting dynamically to cursor perspective.
-- 🔬 **Research Query Studio**: Configure targeted investigations with company parameters, hypotheses, and focus areas.
+- 🔬 **Research Query Studio**: Configure targeted investigations with company parameters, custom research questions, and focus areas.
 - 📡 **Live Run Pipeline**: Progress tracking that transitions seamlessly between live API telemetry and bundled offline datasets.
 - 📊 **Signal Radar & KPI Center**: High-density interactive Recharts radar chart mapping all 5 scoring dimensions alongside active hypothesis confidence gauges.
-- 📑 **Evidence Matrix**: Filterable claim feed (`SUPPORTS`, `CONTRADICTS`, `NEUTRAL`) with confidence metrics and origin attribution.
-- ⚡ **Contradiction Explorer**: Accordion analysis comparing company statements directly with external market signals and plausible hypotheses.
+- 📑 **Evidence Matrix**: Filterable claim feed (`SUPPORTS`, `CONTRADICTS`, `NEUTRAL`) with confidence meters and origin attribution.
+- ⚡ **Contradiction Explorer**: Accordion analysis comparing company statements directly with external market signals and plausible explanations.
 - 🛡️ **Self-Falsification Suite**: Direct stress-testing of the core investment thesis with potential falsifiers, evidence found, and risk ratings.
 - 🕸️ **Topological Research Graph**: Custom interactive SVG bezier node-link visualization connecting research questions, hypotheses, contradictions, evidence nodes, and final signals.
 - 📑 **Dossier & Markdown Report Export**: One-click generation and download of formatted, auditable research memos.
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Framework**: React 18 (TypeScript)
+- **Bundler & Dev Server**: Vite 5
+- **Styling**: Tailwind CSS v4, custom theme variables, luxury dark editorial palette
+- **Motion & 3D**: Motion (formerly Framer Motion)
+- **Data Visualization**: Recharts (Radar, multi-axis polar charts) & Interactive SVG Graph
+- **Icons**: Lucide React
+
+### Backend
+- **Framework**: FastAPI (Python 3.10+)
+- **Server**: Uvicorn (ASGI)
+- **Validation**: Pydantic v2
+- **CORS & Proxy**: Configured for local cross-origin development and seamless reverse proxy
 
 ---
 
@@ -87,10 +155,10 @@ $$\text{Signal Score} = 0.30 \cdot E + 0.20 \cdot Q + 0.15 \cdot A + 0.25 \cdot 
 SignalForge/
 ├── backend/
 │   ├── main.py              # FastAPI server & DemoAgent research pipeline
-│   ├── requirements.txt     # Python backend dependencies (FastAPI, Uvicorn, Pydantic)
+│   ├── requirements.txt     # Python backend dependencies
 │   └── .venv/               # Python virtual environment
 ├── frontend/
-│   ├── index.html           # HTML entry point with typography imports
+│   ├── index.html           # HTML entry point with luxury typography imports
 │   ├── package.json         # React 18, Vite 5, Tailwind v4, Motion, Lucide, Recharts
 │   ├── tsconfig.json        # TypeScript configuration
 │   ├── vite.config.ts       # Vite configuration with backend /api proxy
@@ -102,7 +170,7 @@ SignalForge/
 │       ├── Graph.tsx        # Topological SVG node-link research graph
 │       ├── ctx.ts           # Global application state & context
 │       ├── ui.tsx           # Shared design tokens, badges, cards, and buttons
-│       ├── index.css        # Tailwind v4 theme tokens & luxury dark aesthetics
+│       ├── index.css        # Tailwind v4 theme tokens & editorial styling
 │       └── demo.json        # Structured research dataset & single source of truth
 └── README.md
 ```
@@ -167,7 +235,7 @@ npm run preview
 
 ## 🔌 Extending to Live AI / Web Search
 
-`backend/main.py` provides a modular `DemoAgent` interface designed to be swapped with live multi-agent LLM orchestrators (e.g., LangGraph, AutoGen, Google Gemini, OpenAI, or Claude):
+`backend/main.py` provides a modular `DemoAgent` interface designed to plug in live multi-agent LLM orchestrators (e.g., Google Gemini, OpenAI, Claude, LangGraph, AutoGen) and live search/financial APIs (SEC EDGAR, Tavily, Bloomberg, Alpha Vantage):
 
 ```python
 class ResearchAgent:
@@ -190,12 +258,22 @@ class ResearchAgent:
 
 ---
 
+## 🗺️ Product Roadmap
+
+- [x] **Phase 1 — Research MVP**: Structured research workflow, evidence matrix, contradiction engine, and research graph.
+- [ ] **Phase 2 — Live Financial Search**: Direct connectors for SEC EDGAR 10-K/10-Q filings, transcripts, and press releases.
+- [ ] **Phase 3 — Autonomous Contradiction Detection**: Real-time cross-document validation between earnings audio transcripts and audited notes.
+- [ ] **Phase 4 — Historical Signal Backtesting**: Evaluate previous signal accuracy against subsequent quarterly earnings surprises.
+- [ ] **Phase 5 — Multi-Company & Sector Comparison**: Simultaneous triangulation across entire industry verticals.
+
+---
+
 ## ⚖️ Disclaimer
 
-*SignalForge is an illustrative research demonstration. All figures, quotes, company names, and data points included in the demo datasets are synthetic and for demonstration purposes only. They do not constitute financial advice or investment recommendations.*
+*SignalForge is an illustrative research demonstration created for the Finding the Next Signal hackathon. All figures, quotes, company names, and data points included in the demo datasets are synthetic and for demonstration purposes only. They do not constitute financial advice or investment recommendations.*
 
 ---
 
 <div align="center">
-Made with precision for deep research clarity.
+<b>SignalForge</b> — Find the signal. Challenge the signal.
 </div>
