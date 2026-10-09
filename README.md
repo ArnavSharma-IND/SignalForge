@@ -172,19 +172,26 @@ SignalForge/
 │   ├── main.py                  # Server entrypoint (uvicorn main:app)
 │   └── requirements.txt         # Backend Python dependencies
 ├── frontend/
+│   ├── .env.example             # Frontend Firebase environment template
 │   ├── index.html               # HTML entry point with luxury typography imports
-│   ├── package.json             # React 18, Vite 5, Tailwind v4, Motion, Lucide, Recharts
+│   ├── package.json             # React 18, Vite 5, Tailwind v4, Firebase, Motion, Recharts
 │   ├── tsconfig.json            # TypeScript configuration
 │   ├── vite.config.ts           # Vite configuration with backend /api proxy
 │   └── src/
-│       ├── main.tsx             # Application entry point & router setup
+│       ├── main.tsx             # Application entry point & AuthProvider wrapper
 │       ├── App.tsx              # Main shell, navigation tabs, Overview, Evidence, Reports
+│       ├── AuthPage.tsx         # Sign-in, Register, Phone code, Reset, Verify, Account pages
+│       ├── History.tsx          # Past investigation dossiers and real-time job manager
 │       ├── Landing.tsx          # Interactive landing page & 3D methodology stack
-│       ├── Run.tsx              # Research execution & live pipeline tracker
+│       ├── Run.tsx              # Real-time backend job tracker with live stage progress
 │       ├── Graph.tsx            # Topological SVG node-link research graph
+│       ├── api.ts               # Authenticated REST client for FastAPI backend
+│       ├── auth.tsx             # Firebase Auth context, hooks, and ProtectedRoute guard
+│       ├── firebase.ts          # Firebase SDK initialization & auth providers
 │       ├── ctx.ts               # Global application state & context
 │       ├── ui.tsx               # Shared design tokens, badges, cards, and buttons
 │       ├── index.css            # Tailwind v4 theme tokens & editorial styling
+│       ├── vite-env.d.ts        # TypeScript environment definitions
 │       └── demo.json            # Structured research dataset & single source of truth
 ├── .gitignore                   # Git ignore rules for Python, Node, Vite, logs, and venv
 └── README.md                    # Project documentation
@@ -192,10 +199,9 @@ SignalForge/
 
 ---
 
-## ⚙️ Backend Environment Configuration
+## ⚙️ Environment Configuration
 
-Create a `.env` file in the `backend/` directory or copy from `.env.example`:
-
+### Backend (`backend/.env`)
 ```bash
 cp backend/.env.example backend/.env
 ```
@@ -213,6 +219,21 @@ cp backend/.env.example backend/.env
 | `LLM_MODEL` | Claude model name | `claude-sonnet-5-5` |
 | `TAVILY_API_KEY` | Tavily API key for targeted financial web searches | `your-tavily-key` |
 | `RATE_LIMIT_RUNS_PER_HOUR` | Rate limit per user | `10` |
+
+### Frontend (`frontend/.env`)
+```bash
+cp frontend/.env.example frontend/.env
+```
+
+| Variable | Description | Default / Example |
+| :--- | :--- | :--- |
+| `VITE_FIREBASE_API_KEY` | Firebase Web API Key | `your-firebase-api-key` |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase Auth Domain | `your-project.firebaseapp.com` |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase Project ID | `your-firebase-project-id` |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase Storage Bucket | `your-project.appspot.com` |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Firebase Messaging Sender ID | `your-sender-id` |
+| `VITE_FIREBASE_APP_ID` | Firebase Web App ID | `your-app-id` |
+| `VITE_AUTH_DISABLED` | Bypass Firebase Auth in frontend for local development | `true` |
 
 ---
 
